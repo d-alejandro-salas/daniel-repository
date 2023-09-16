@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Crear un enlace al archivo CSS
+  const cssLink = document.createElement('link');
+  cssLink.rel = 'stylesheet';
+  cssLink.type = 'text/css';
+  cssLink.href = 'Styles/header-footer.css';
+
+  // Agregar el enlace CSS al head del documento
+  document.head.appendChild(cssLink);
   
   // Genera el header
   function generateHeader() {
