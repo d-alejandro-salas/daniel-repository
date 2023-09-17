@@ -93,8 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Verifica si la ubicación actual es la página de inicio
-    if (currentLocation.endsWith("index.html")) {
-      // Obtén el enlace del logo por su id
+    if (currentLocation.endsWith("index.html") || currentLocation === "https://danielcabj88.github.io/daniel-repository/ {  // Obtén el enlace del logo por su id
       var logoLink = document.getElementById("logo");
       if (logoLink) {
         // Agrega la clase "active" al enlace del logo en la página de inicio
