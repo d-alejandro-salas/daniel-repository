@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="galería.html">My little cat (responsive photo gallery)</a>
         <a href="Bulma.html">BULMA</a>        
         <div id="switch">
-        MODO OBSCURO
+        DARK MODE
         </div>
       </nav>
     `;
@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Cambiar las clases según el modo actual
       if (isLightMode) {
         // Modo claro
-        switchButton.innerHTML = "MODO OBSCURO";
+        switchButton.innerHTML = "DARK MODE";
         body.classList.remove("dark");
         body.classList.add("light");
       } else {
         // Modo oscuro
-        switchButton.innerHTML = "MODO CLARO";
+        switchButton.innerHTML = "LIGHT MODE";
         body.classList.remove("light");
         body.classList.add("dark");
       }
