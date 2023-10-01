@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<!--   <style>
+    section {background-color: lightcoral;}
+  </style> -->
 </head>
 <body>
   <header class="header">
@@ -24,10 +27,10 @@
       </div>
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="index.html">Home</a>
-          <a class="navbar-item" href="galería.html">My little cat (responsive photo gallery)</a>
+          <a class="navbar-item has-text-white" href="index.html">Home</a>
+          <a class="navbar-item has-text-white" href="galería.html">My little cat (responsive photo gallery)</a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="about me.html">About me</a>
+            <a class="navbar-link has-text-white" href="about me.html">About me</a>
             <div class="navbar-dropdown">
               <a class="navbar-item" href="about me.html#personalStatement">
                 Personal Statement
@@ -38,37 +41,55 @@
               <a class="navbar-item" href="about me.html#interests">
                 Interest
               </a>          
-              <a class="navbar-item" href="about me.html#pet">
+              <a class="navbar-item has-text-white" href="about me.html#pet">
                 Pet
               </a>
             </div>
           </div>
         </div>
         <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
+          <div id="switch" class="navbar-item">
+              <a class="button is-dark">
+                DARK MODE
               </a>
-              <a class="button is-light">
-                Log in
-              </a>
-            </div>
           </div>
         </div>
       </div>
     </nav>
   </header>
-  <main>
-    Hola.
+  <main class="container">
+      <section>
+          <h1 class="is-size-1 has-text-centered">Bulma CSS</h2>
+          <p class="is-unselectable has-text-justified">
+              Bulma CSS is a modern, open-source CSS framework that provides a set of responsive and flexible CSS classes to streamline web development. It is built on Flexbox, making it easy to create complex layouts and designs while maintaining a clean and modular code structure.
+          </p>
+          <p class="is-unselectable has-text-justified">
+              With Bulma, you can quickly prototype and design web applications and websites with ease. It offers a variety of utility classes for styling elements such as buttons, forms, navigation menus, and more. Bulma also encourages a mobile-first design approach, ensuring that your projects are mobile-friendly by default.
+          </p>
+          <p class="is-unselectable has-text-justified">
+              In this portfolio, I've utilized Bulma CSS to demonstrate my proficiency with this framework. You can explore how I've leveraged Bulma's features to create a responsive and visually appealing design.
+          </p>
+      </section>
+      <section>
+          <h2>My Work</h2>
+          <!-- Showcase your projects and work samples -->
+      </section>
+      <section>
+          <h2>Skills</h2>
+          <!-- List your technical skills, languages, tools, etc. -->
+      </section>
+      <section>
+          <h2>Contact</h2>
+          <!-- Include your contact information or a contact form -->
+      </section>
   </main>
   <footer class="footer has-text-white has-background-info">
     <div class="content has-text-centered">
       <div class="is-pulled-left">
-        <p>© All rights reserved 2023</p>
+        <p class="is-unselectable has-text-justified">© All rights reserved 2023</p>
       </div>
       <div class="is-pulled-right">
-        <p>¡Seguime en mis redes sociales!</p>
+        <p class="is-unselectable has-text-justified">¡Seguime en mis redes sociales!</p>
         <div class="social-icons">
           <a href="https://www.facebook.com/daniel.cabj88" class="fa fa-facebook" title="Facebook"></a>
           <a href="https://www.instagram.com/daniel_cabj88/" class="fa fa-instagram" title="Instagram"></a>
@@ -79,5 +100,27 @@
       </div>
     </div>
   </footer>
+<script>
+    const switchButton = document.querySelector("#switch a");
+    const main = document.querySelector("main");
+    const nav = document.querySelector("nav");
+    const footer = document.querySelector("footer");
+    let isLightMode = true;
+
+    function toggleDarkMode() {
+        isLightMode = !isLightMode;
+
+        switchButton.innerHTML = isLightMode ? "MODO OBSCURO" : "MODO CLARO";
+        switchButton.classList.toggle("is-inverted");
+        main.classList.toggle("has-background-black");
+        main.classList.toggle("has-text-white");
+        nav.classList.toggle("has-background-link");
+        nav.classList.toggle("has-background-info");
+        footer.classList.toggle("has-background-link");
+        footer.classList.toggle("has-background-info");
+    }
+
+    switchButton.addEventListener("click", toggleDarkMode);
+</script>
 </body>
 </html>

@@ -1,4 +1,13 @@
-@import url('estilo.css');
+:root {
+  --white: #fff; /* Color de texto principal */
+  --principal-skyblue: #48C7F3; /* Celeste principal */
+  --border-skyblue: #3a9bc7;
+  --dark-border-hover-color: #2E7FAF;
+  --dark-blue: #1a4f72;
+  --dark-principal-skyblue:#0359AA;
+  --dark-hover-principal-skyblue: #02417C;
+}
+
 
 /* Estilos del header y footer */
 header, footer {
@@ -15,17 +24,30 @@ header, footer {
   justify-content: space-between;
 }
 
+body.dark header, body.dark footer {
+  background-color: var(--dark-principal-skyblue);
+  border-bottom: solid 5px var(--dark-border-hover-color);
+}
+
 header:hover, footer:hover {
   background-color: var(--border-skyblue);
   border-bottom: solid 5px var(--principal-skyblue);
 }
+
+body.dark header:hover, body.dark footer:hover {
+  background-color: var(--dark-hover-principal-skyblue);
+  border-bottom: solid 5px var(--dark-border-hover-color);}
 
 header nav, footer #redesSociales {
   text-transform: uppercase;
   align-items: center;
 }
 
-#logo, header nav a, footer #redesSociales a, #aboutMeMenu a {
+body.dark #redesSociales > a {
+  background-color: inherit;
+}
+
+#logo, header nav a, footer #redesSociales a, #aboutMeMenu a, #switch {
   color: var(--white);
   text-decoration: none;
   padding: 5px;
@@ -39,20 +61,6 @@ header nav, footer #redesSociales {
   color: var(--principal-skyblue);
   border: 2px solid var(--principal-skyblue);
   padding: 10px;
-}
-
-@media (max-width: 768px) {
-  header, footer {
-    height: auto;
-  }
-
-  header {
-    flex-direction: column;
-  }
-
-  #logo {
-    margin-bottom: 10px;
-  }
 }
 
 header nav a, footer #redesSociales a, #aboutMeMenu a {
@@ -89,32 +97,16 @@ header nav {
 
 /* Estilo para el botón de modo obscuro */
 
-.switchContenedor {
-  display: flex;
-  align-items: center;
+#switch {
+  width: 185.797px;
+  background-color: #000;
+  color: #fff;
 }
 
-.switch {
-  background-color: var(--white); /* Color de fondo en modo claro */
-  border-radius: 16px; /* Hacemos el borde un poco más rectangular */
-  cursor: pointer;
-  width: 65px; /* Aumentamos el ancho del botón */
-  height: 30px; /* Ajustamos la altura del botón */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: bottom; /* Ajusta la alineación vertical */
-  transition: background-color 0.3s;
-}
-
-.switch img {
-  max-width: 90%; /* Ajustamos el tamaño máximo de la imagen */
-  max-height: 90%; /* Ajustamos el tamaño máximo de la imagen */
-  object-fit: contain;
-}
-
-.switch:hover {
-  background-color: var(--white); /* Cambia el color de fondo en el estado hover */
+body.dark #switch {
+  color: #000;
+  background-color: #fff;
+  border: solid 2px #000!important;
 }
 
 /* Estilos específicos para el footer */
@@ -157,3 +149,22 @@ footer p {
   bottom: 130px;
   right: 15px;
 }
+
+@media (max-width: 768px) {
+  header, footer { /* Cambia el color de fondo del header y footer */
+    display: flex; /* Cambia el valor de display */
+    height: auto; /* Cambia la altura a automático */
+    flex-direction: column!important; /* Cambia la dirección de flex a columna */
+  }
+
+  nav { /* Cambia el selector */
+    display: flex; /* Cambia el valor de display */
+    flex-direction: column!important; /* Cambia la dirección de flex a columna */
+  }
+  
+
+  #logo {
+    margin-bottom: 10px; /* Añade margen inferior al logo */
+  }
+}
+

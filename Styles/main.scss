@@ -1,0 +1,53 @@
+@import 'Utils/_variables';
+@import 'Pages/index';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    font-family: var(--base-font);
+    font-size: 62.5%;
+    color: var(--dark-solid);
+}
+
+ul, ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+  
+body {
+  font-family: Arial, sans-serif;
+  text-align: justify;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.dark {
+  background-color: #000;
+  color: $white;
+}
+
+main {
+  padding: 7.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#upButton {
+  display: flex;
+  justify-content: center;
+  background: none;
+}
