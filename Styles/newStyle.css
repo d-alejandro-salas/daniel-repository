@@ -86,10 +86,10 @@ body.dark #flex-container .form__button {
   border: 2px solid #3a9bc7;
 }
 
-/* Gallery */
+/* Gallery styles for mobile */
 #gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1fr;
   grid-gap: 10px;
 }
 #gallery .galleryImage {
@@ -97,12 +97,18 @@ body.dark #flex-container .form__button {
   height: 100%;
   border-radius: 5px;
   object-fit: cover;
-  transition: transform 0.3s; /* Agregar una transición suave para el cambio */
+  transition: transform 0.3s;
 }
 #gallery .galleryImage:hover {
-  transform: scale(1.5); /* Escala la imagen al 120% de su tamaño original */
+  transform: scale(1.1); /* Ajusta la escala en hover según sea necesario */
 }
 
+/* Additional styles for larger screens */
+@media (min-width: 600px) {
+  #gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
 *,
 *::before,
 *::after {

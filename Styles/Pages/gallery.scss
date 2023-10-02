@@ -1,16 +1,28 @@
-/* Gallery */
+/* Gallery styles for mobile */
 #gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
     grid-gap: 10px;
-    .galleryImage  {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    object-fit: cover;
-    transition: transform 0.3s; /* Agregar una transición suave para el cambio */
-    &:hover {
-    transform: scale(1.5); /* Escala la imagen al 120% de su tamaño original */
-  }}}
+  
+    .galleryImage {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      object-fit: cover;
+      transition: transform 0.3s;
+  
+      &:hover {
+        transform: scale(1.1); /* Ajusta la escala en hover según sea necesario */
+      }
+    }
+  }
+  
+  /* Additional styles for larger screens */
+  @media (min-width: 600px) {
+    #gallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  
   
   
