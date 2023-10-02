@@ -12,11 +12,6 @@ article img {
 }
 
 @media (min-width: 600px) {
-  main {
-    display: flex;
-    flex-direction: row !important;
-    justify-content: space-between;
-  }
   article, section {
     flex-basis: calc(50% - 20px);
     padding: 20px;
@@ -50,7 +45,6 @@ article img {
 }
 #flex-container .form .form__input,
 #flex-container .form #message {
-  background-color: red;
   width: 100%;
   padding: 10px;
   margin: 6px 0;
@@ -65,16 +59,16 @@ article img {
   border-bottom: 3px solid #3a9bc7;
   background: #fff;
 }
-#flex-container .form .form__input.dark:focus,
-#flex-container .form #message.dark:focus {
-  background: #1a4f72;
-  color: #fff;
+body.dark #flex-container .form .form__input:focus,
+body.dark #flex-container .form #message:focus {
+  background-color: #333 !important; /* Un gris oscuro */
+  color: #fff !important;
 }
-#flex-container .form #message {
+#flex-container #message {
   min-height: 140px;
   resize: vertical;
 }
-#flex-container .form .form__button {
+#flex-container .form__button {
   background-color: #48C7F3;
   border: 2px solid #3a9bc7;
   color: #fff;
@@ -82,9 +76,13 @@ article img {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-#flex-container .form .form__button:hover {
+#flex-container .form__button:hover {
   background-color: #3a9bc7;
   border: 2px solid #48C7F3;
+}
+body.dark #flex-container .form__button {
+  background-color: #1a4f72;
+  border: 2px solid #3a9bc7;
 }
 
 *,
@@ -125,13 +123,20 @@ body.dark {
 }
 
 main {
-  padding: 7.5rem;
+  padding: 3rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@media (min-width: 600px) {
+  main {
+    padding: 7.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 #upButton {
   display: flex;
   justify-content: center;

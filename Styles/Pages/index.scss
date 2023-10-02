@@ -16,11 +16,6 @@ article {
 }
 
 @media (min-width: 600px) {
-    main {
-        display: flex;
-        flex-direction: row!important;
-        justify-content: space-between;
-    }
 
     article, section {
         flex-basis: calc(50% - 20px); // Restamos 20px para tener espacio entre los elementos
@@ -61,7 +56,6 @@ article {
     
         .form__input,
         #message {
-            background-color: red;
             width: 100%;
             padding: 10px;
             margin: 6px 0;
@@ -75,11 +69,10 @@ article {
             border-bottom: 3px solid $borderSkyblue;
             background: $white;
             }
-    
-            &.dark {
-            &:focus {
-                background: $darkBlue;
-                color: $white;
+
+            body.dark &:focus {
+                background-color: #333!important; /* Un gris oscuro */
+                color: #fff!important;
             }
             }
         }
@@ -101,8 +94,14 @@ article {
             background-color: $borderSkyblue;
             border: 2px solid $mainSkyblue;
             }
+
+            body.dark & {
+                background-color: $darkBlue;
+                border: 2px solid $borderSkyblue;
+                }
         }
     }
-}
+
+
   
   

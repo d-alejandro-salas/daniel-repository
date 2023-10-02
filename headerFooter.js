@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function generateFooter() {
     const footer = document.createElement('footer');
     footer.innerHTML = `
-      <p>© All rights reserved 2023</p>
+      <p>© All rights reserved <span id="yearPlaceholder"></span></p>
       <section id="redesSociales">¡Seguime en mis redes sociales!<br>
         <a href="https://www.facebook.com/daniel.cabj88" class="fa fa-facebook" title="Facebook"></a>
         <a href="https://www.instagram.com/daniel_cabj88/" class="fa fa-instagram" title="Instagram"></a>
@@ -72,7 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="mailto:daniel.salas@bue.edu.ar" class="fa fa-envelope" title="Email"></a>
       </section>
     `;
-    document.body.appendChild(footer); // Cambia 'prepend' a 'appendChild' para ubicarlo al final del body
+    document.body.appendChild(footer);
+    // Obtén el elemento del marcador de posición del año y el año actual
+    var yearPlaceholder = document.getElementById("yearPlaceholder");
+    var currentYear = new Date().getFullYear();
+
+    // Coloca el año actual en el marcador de posición
+    yearPlaceholder.textContent = currentYear; // Cambia 'prepend' a 'appendChild' para ubicarlo al final del body
   }
   
   // Agrega la clase "active" al enlace del menú correspondiente según la ubicación actual
