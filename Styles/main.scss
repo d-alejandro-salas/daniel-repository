@@ -1,5 +1,6 @@
 @import 'Utils/_variables';
 @import 'Pages/index';
+@import 'Pages/gallery';
 
 *,
 *::before,
@@ -38,6 +39,10 @@ body.dark {
   color: $white;
 }
 
+h1 {
+  text-align: center
+}
+
 main {
   padding: 3rem;
   box-sizing: border-box;
@@ -47,12 +52,12 @@ main {
 }
 
 @media (min-width: 600px) {
-    main {
-      padding: 7.5rem;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  main {
+    padding: 7.5rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
+}
 
 #upButton {
   display: flex;

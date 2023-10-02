@@ -1,0 +1,16 @@
+/* Gallery */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    .galleryImage  {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s; /* Agregar una transición suave para el cambio */
+    &:hover {
+    transform: scale(1.5); /* Escala la imagen al 120% de su tamaño original */
+  }}}
+  
+  
