@@ -3,6 +3,13 @@ article {
   flex-direction: column;
   align-items: center;
 }
+article img {
+  max-width: 100%;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 @media (min-width: 600px) {
   main {
@@ -19,13 +26,6 @@ article {
     font-size: medium;
     text-align: justify;
     line-height: 1.5;
-  }
-  article img {
-    max-width: 100%;
-    display: block;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
 #flex-container {
