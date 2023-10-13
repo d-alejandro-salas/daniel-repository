@@ -8,58 +8,68 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-<!--   <style>
-    section {background-color: lightcoral;}
-  </style> -->
+  <style>
+    .navbar__item__hoverLight:hover {
+      background: #3488ce!important;
+    }
+
+    .navbar__item__hoverDark:hover {
+      background: #3e56c4!important;
+    }
+
+  </style>
 </head>
 <body>
-  <header class="header">
-    <nav class="navbar has-background-info" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+<header class="header">
+  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand is-info">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item has-text-white" href="index.html">
+          <span class="icon is-small pr-3"><i class="fas fa-home"></i></span>
+          <span>Home</span>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item has-text-white" href="index.html">Home</a>
-          <a class="navbar-item has-text-white" href="galería.html">My little cat (responsive photo gallery)</a>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link has-text-white" href="about me.html">About me</a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="about me.html#personalStatement">
-                Personal Statement
-              </a>
-              <a class="navbar-item" href="about me.html#work">
-                Work
-              </a>
-              <a class="navbar-item" href="about me.html#interests">
-                Interest
-              </a>          
-              <a class="navbar-item has-text-white" href="about me.html#pet">
-                Pet
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="navbar-end">
-          <div id="switch" class="navbar-item">
-              <a class="button is-dark">
-                DARK MODE
-              </a>
+        <a class="navbar-item has-text-white navbar__item__hover" href="galería.html">My little cat (responsive photo gallery)</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link has-text-white" href="about me.html">About me</a>
+          <div id="navbarDropdown" class="navbar-dropdown has-background-info">
+            <a class="navbar-item navbar__item__hoverLight has-text-white" href="about me.html#personalStatement">
+              Personal Statement
+            </a>
+            <a class="navbar-item navbar__item__hoverLight has-text-white" href="about me.html#work">
+              Work
+            </a>
+            <a class="navbar-item navbar__item__hoverLight has-text-white" href="about me.html#interests">
+              Interest
+            </a>          
+            <a class="navbar-item navbar__item__hoverLight has-text-white" href="about me.html#pet">
+              Pet
+            </a>
           </div>
         </div>
       </div>
-    </nav>
-  </header>
+      <div class="navbar-end">
+        <div id="switch" class="navbar-item">
+            <a class="button is-black">
+              DARK MODE
+            </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
   <main class="container">
       <section>
-          <h1 class="is-size-1 has-text-centered">Bulma CSS</h2>
+          <h1 class="is-size-1 is-size-4-mobile has-text-centered">Bulma CSS</h2>
           <p class="is-unselectable has-text-justified">
               Bulma CSS is a modern, open-source CSS framework that provides a set of responsive and flexible CSS classes to streamline web development. It is built on Flexbox, making it easy to create complex layouts and designs while maintaining a clean and modular code structure.
           </p>
@@ -86,25 +96,29 @@
   <footer class="footer has-text-white has-background-info">
     <div class="content has-text-centered">
       <div class="is-pulled-left">
-        <p class="is-unselectable has-text-justified">© All rights reserved 2023</p>
+        <p class="has-text-justified">© All rights reserved <span id="yearPlaceholder"></span></p>
       </div>
       <div class="is-pulled-right">
-        <p class="is-unselectable has-text-justified">¡Seguime en mis redes sociales!</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/daniel.cabj88" class="fa fa-facebook" title="Facebook"></a>
-          <a href="https://www.instagram.com/daniel_cabj88/" class="fa fa-instagram" title="Instagram"></a>
-          <a href="https://www.linkedin.com/in/danielalejandrosalas/" class="fa fa-linkedin" title="LinkedIn"></a>
-          <a href="https://www.youtube.com/@daniel_cabj88" class="fa fa-youtube" title="YouTube"></a>
-          <a href="mailto:daniel.salas@bue.edu.ar" class="fa fa-envelope" title="Email"></a>
+        <p class="has-text-justified">¡Seguime en mis redes sociales!</p>
+        <div class="social-icons ">
+          <a href="https://www.facebook.com/daniel.cabj88" class="fa fa-facebook has-text-white" title="Facebook"></a>
+          <a href="https://www.instagram.com/daniel_cabj88/" class="fa fa-instagram has-text-white" title="Instagram"></a>
+          <a href="https://www.linkedin.com/in/danielalejandrosalas/" class="fa fa-linkedin has-text-white" title="LinkedIn"></a>
+          <a href="https://www.youtube.com/@daniel_cabj88" class="fa fa-youtube has-text-white" title="YouTube"></a>
+          <a href="mailto:daniel.salas@bue.edu.ar" class="fa fa-envelope has-text-white" title="Email"></a>
         </div>
       </div>
     </div>
   </footer>
-<script>
+  <script>
     const switchButton = document.querySelector("#switch a");
     const main = document.querySelector("main");
     const nav = document.querySelector("nav");
     const footer = document.querySelector("footer");
+    const menuIcon = document.querySelector(".navbar-burger");
+    const menu = document.querySelector("#navbarBasicExample");   
+    const navbarDropdown = document.getElementById("navbarDropdown");
+
     let isLightMode = true;
 
     function toggleDarkMode() {
@@ -114,13 +128,31 @@
         switchButton.classList.toggle("is-inverted");
         main.classList.toggle("has-background-black");
         main.classList.toggle("has-text-white");
-        nav.classList.toggle("has-background-link");
-        nav.classList.toggle("has-background-info");
+        nav.classList.toggle("is-link");
+        nav.classList.toggle("is-info");
         footer.classList.toggle("has-background-link");
         footer.classList.toggle("has-background-info");
+        navbarDropdown.classList.toggle("has-background-info"); 
+        navbarDropdown.classList.toggle("has-background-link"); 
+
+        // Itera sobre os itens do menu e aplica as classes apropriadas
+        navbarDropdown.querySelectorAll(".navbar-item").forEach((item) => {
+            item.classList.toggle("navbar__item__hoverLight");
+            item.classList.toggle("navbar__item__hoverDark");
+        });
     }
 
     switchButton.addEventListener("click", toggleDarkMode);
-</script>
+    var yearPlaceholder = document.getElementById("yearPlaceholder");
+    var currentYear = new Date().getFullYear();
+
+    // Coloca el año actual en el marcador de posición
+    yearPlaceholder.textContent = currentYear;
+    // Agregar un evento de clic al icono del menú
+    menuIcon.addEventListener("click", function() {
+      // Alternar la visibilidad del menú
+      menu.classList.toggle("is-active");
+    });
+  </script>
 </body>
 </html>
