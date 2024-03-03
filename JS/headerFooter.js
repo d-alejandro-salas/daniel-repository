@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <a id="logo" href="index.html">LOGOTIPO</a>
       <nav>
         <a href="about me.html">About me</a>
-        <a href="galería.html">My little cat (responsive photo gallery)</a>
+        <a href="gallery.html">My little cat (responsive photo gallery)</a>
         <a href="Bulma.html">BULMA</a>        
         <div id="switch">
         DARK MODE
@@ -30,20 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
   
     switchButton.addEventListener("click", function () {
       // Alternar el modo
-      isLightMode = !isLightMode;  
-      // Obtener el elemento body
-      const body = document.body;  
-      // Cambiar las clases según el modo actual
+      isLightMode = !isLightMode;
+
+      document.body.classList.toggle("dark");
+
+      // Verificar si el elemento #aboutMeMenu está presente en el body
+      const aboutMeMenu = document.querySelector("#aboutMeMenu");
+      if (aboutMeMenu) {
+        aboutMeMenu.classList.toggle("dark");
+      }
+
       if (isLightMode) {
         // Modo claro
         switchButton.innerHTML = "DARK MODE";
-        body.classList.remove("dark");
-        body.classList.add("light");
       } else {
         // Modo oscuro
         switchButton.innerHTML = "LIGHT MODE";
-        body.classList.remove("light");
-        body.classList.add("dark");
       }
     });
   }
@@ -63,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function generateFooter() {
     const footer = document.createElement('footer');
     footer.innerHTML = `
-      <p>© All rights reserved <span id="yearPlaceholder"></span></p>
-      <section id="redesSociales">¡Seguime en mis redes sociales!<br>
+      <p>Web Developer <a class="copyright__a" href="https://drive.google.com/file/d/1JvKXVXbLuJM6whTgIW7sI9gLW1nE9W_H/view?usp=drive_link">Daniel Alejandro</a><br>© All rights reserved <span id="yearPlaceholder"></span>.</p>
+      <section id="socialNetworks">FOLLOW ME ON MY SOCIAL NETWORKS!<br>
         <a href="https://www.facebook.com/daniel.cabj88" class="fa fa-facebook" title="Facebook"></a>
         <a href="https://www.instagram.com/daniel_cabj88/" class="fa fa-instagram" title="Instagram"></a>
         <a href="https://www.linkedin.com/in/danielalejandrosalas/" class="fa fa-linkedin" title="LinkedIn"></a>

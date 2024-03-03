@@ -38,16 +38,16 @@ body.dark header:hover, body.dark footer:hover {
   background-color: var(--dark-hover-principal-skyblue);
   border-bottom: solid 5px var(--dark-border-hover-color);}
 
-header nav, footer #redesSociales {
+header nav, footer #socialNetworks {
   text-transform: uppercase;
   align-items: center;
 }
 
-body.dark #redesSociales > a {
+body.dark #socialNetworks > a {
   background-color: inherit;
 }
 
-#logo, header nav a, footer #redesSociales a, #aboutMeMenu a, #switch {
+#logo, header nav a, footer #socialNetworks a, #aboutMeMenu a, #switch {
   color: var(--white);
   text-decoration: none;
   padding: 5px;
@@ -56,19 +56,19 @@ body.dark #redesSociales > a {
   transition: background-color 0.3s, color 0.3s, padding 0.3s;
 }
 
-#logo:hover, header nav a:hover, footer #redesSociales a:hover, #aboutMeMenu a:hover {
+#logo:hover, header nav a:hover, footer #socialNetworks a:hover, #aboutMeMenu a:hover {
   background-color: var(--white);
   color: var(--principal-skyblue);
   border: 2px solid var(--principal-skyblue);
   padding: 10px;
 }
 
-body.dark header nav a:hover, body.dark footer #redesSociales a:hover {
+body.dark header nav a:hover, body.dark footer #socialNetworks a:hover {
   color: var(--dark-border-hover-color);
   border: 2px solid var(--dark-border-hover-color);
 }
 
-header nav a, footer #redesSociales a, #aboutMeMenu a {
+header nav a, footer #socialNetworks a, #aboutMeMenu a {
   margin: 5px 10px;
 }
 
@@ -133,9 +133,10 @@ footer:hover {
 
 footer p {
   margin: 0;
+  text-align: left;
 }
 
-#redesSociales a {
+#socialNetworks a {
   width: 40px;
   height: 40px;
   background-color: var(--principal-skyblue);

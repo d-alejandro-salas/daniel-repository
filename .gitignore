@@ -1,4 +1,4 @@
 # Ignorar todos los archivos en la carpeta "styles" excepto "style.css"
 Styles/*
-!Styles/newStyle.css
+!Styles/style.css
 !Styles/header-footer.css
