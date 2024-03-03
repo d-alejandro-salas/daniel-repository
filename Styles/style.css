@@ -110,8 +110,7 @@ body.dark #flex-container .form__button {
   }
 }
 #aboutMeMenu {
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin-top: 1rem !important;
   background-color: #48C7F3;
   padding: 1rem;
   max-width: 27rem;
@@ -120,6 +119,11 @@ body.dark #flex-container .form__button {
   justify-content: center;
   align-items: center;
   border: 0.5rem solid #3a9bc7;
+  margin: 0 auto; /* Centra horizontalmente */
+}
+#aboutMeMenu.dark {
+  background-color: #0359AA;
+  border-color: #2E7FAF;
 }
 #aboutMeMenu h2 {
   margin: 0;
@@ -141,9 +145,18 @@ body.dark #flex-container .form__button {
   color: inherit;
 }
 
-#aboutMeMenu.dark {
-  background-color: #0359AA;
-  border-color: #2E7FAF;
+#halloweenSwitch {
+  background-color: red;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #FFF;
+  font-family: Creepster;
+  letter-spacing: 2px;
+}
+#halloweenSwitch.halloween {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  color: black;
 }
 
 #aboutMe__main {
@@ -152,6 +165,11 @@ body.dark #flex-container .form__button {
 }
 
 /* Additional styles for larger screens */
+@media (min-width: 600px) {
+  #aboutMeMenu {
+    margin-left: 1rem;
+  }
+}
 *,
 *::before,
 *::after {
@@ -183,10 +201,12 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
 body.dark {
   background-color: #000;
   color: #fff;
+}
+body button, body #switch {
+  cursor: pointer;
 }
 
 h1 {
