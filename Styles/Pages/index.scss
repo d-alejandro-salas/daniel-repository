@@ -1,0 +1,107 @@
+@import '../Utils/_variables';
+// @import '../../../bulma/bulma';
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+            
+    img {
+        max-width: 100%;
+        display: block;
+        margin: 20px auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (min-width: 600px) {
+
+    article, section {
+        flex-basis: calc(50% - 20px); // Restamos 20px para tener espacio entre los elementos
+        padding: 20px;
+        min-width: 300px;
+    }
+
+    article {
+        font-size: medium;
+        text-align: justify;
+        line-height: 1.5;
+    }
+}
+
+//ESTILOS PARA EL FORMULARIO
+
+#flex-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    border: 14px solid $borderSkyblue;
+    max-width: 1000px;
+    margin: 50px auto;
+
+    h2 {
+        color: $mainSkyblue;
+    }
+  
+    .form {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        padding: 30px;
+        order: 5;
+       
+    
+        .form__input,
+        #message {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            border: none;
+            border-bottom: 3px solid $mainSkyblue;
+            background: transparent;
+            color: $darkBlue;
+    
+            &:focus {
+            outline: none;
+            border-bottom: 3px solid $borderSkyblue;
+            background: $white;
+            }
+
+            body.dark &:focus {
+                background-color: #333!important; /* Un gris oscuro */
+                color: #fff!important;
+            }
+            }
+        }
+    
+        #message {
+            min-height: 140px;
+            resize: vertical;
+        }
+    
+        .form__button {
+            background-color: $mainSkyblue;
+            border: 2px solid $borderSkyblue;
+            color: $white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+    
+            &:hover {
+            background-color: $borderSkyblue;
+            border: 2px solid $mainSkyblue;
+            }
+
+            body.dark & {
+                background-color: $darkBlue;
+                border: 2px solid $borderSkyblue;
+                }
+        }
+    }
+
+
+  
+  
