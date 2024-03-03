@@ -18,20 +18,22 @@
     </article>
     <section id="flex-container">
       <h2>CONTACT ME</h2>
-      <form class="form" onsubmit="return validateForm()">
+      <form action="https://formsubmit.co/daniel_cabj88@yahoo.com" method="POST" class="form" onsubmit="return validateForm()">
         <div class="form__section">
-          <input type="email" class="form__input" id="email" placeholder="Enter your email.">
+          <input type="email" class="form__input" id="email" name="email" requiredplaceholder="Enter your email.">
         </div>
         <div class="form__section">
-          <input type="text" class="form__input" id="subject" placeholder="Enter the subject of the email.">
+          <input type="text" class="form__input" id="subject" name="subject" required placeholder="Enter the subject of the email.">
         </div>
         <div class="form__section">
-          <textarea class="form__input" id="message" placeholder="Enter your message for D Alejandro."></textarea>
+          <textarea class="form__input" id="message" name="message" placeholder="Enter your message for D Alejandro."></textarea>
         </div>
         <div class="form__section">
           <button type="submit" class="form__button"><strong>SEND</strong></button>
         </div>
         <p id="messageForm"></p>
+        <input type="hidden" name="_next" value="https://d-alejandro-salas.github.io/daniel-repository/">
+        <input type="hidden" name="_captcha" value="false">
       </form>
         <!-- Agrega un párrafo para el mensaje de éxito -->
       <script>
