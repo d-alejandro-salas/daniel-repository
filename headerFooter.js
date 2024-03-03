@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Crear un enlace al archivo CSS
+  const cssLink = document.createElement('link');
+  cssLink.rel = 'stylesheet';
+  cssLink.type = 'text/css';
+  cssLink.href = 'Styles/header-footer.css';
+
+  // Agregar el enlace CSS al head del documento
+  document.head.appendChild(cssLink);
   
   // Genera el header
   function generateHeader() {
@@ -8,13 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
       <nav>
         <a href="about me.html">About me</a>
         <a href="galería.html">My little cat (responsive photo gallery)</a>
-        <a href="Bulma.html">BULMA</a>
-        <div class="switchContenedor">
-          <button class="switch" id="switch"> 
-            <span id="switchMessage">
-              <img class="dark" src="https://derechadiario.com.ar/wp-content/plugins/wp-dark-mode/assets/images/btn-1/dark.png" alt="Dark">
-            </span>
-          </button>
+        <a href="Bulma.html">BULMA</a>        
+        <div id="switch">
+        DARK MODE
         </div>
       </nav>
     `;
@@ -22,27 +26,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Agregar evento de clic al botón para cambiar entre las imágenes y el color de fondo
     const switchButton = document.getElementById("switch");
-    const switchMessage = document.getElementById("switchMessage");
-    let isLightMode = false; // Cambiamos el valor inicial a "false" para que inicie en modo oscuro
+    let isLightMode = true; // Por defecto, el modo es claro
+  
     switchButton.addEventListener("click", function () {
+      // Alternar el modo
+      isLightMode = !isLightMode;  
+      // Obtener el elemento body
+      const body = document.body;  
+      // Cambiar las clases según el modo actual
       if (isLightMode) {
-        switchMessage.innerHTML = `<img class="dark" src="https://derechadiario.com.ar/wp-content/plugins/wp-dark-mode/assets/images/btn-1/dark.png" alt="Dark">`; // Cambiar a la imagen de modo oscuro
-        switchButton.style.backgroundColor = "#FFFFFF"; // Cambiar el color de fondo a blanco
-        document.body.classList.toggle('dark');
+        // Modo claro
+        switchButton.innerHTML = "DARK MODE";
+        body.classList.remove("dark");
+        body.classList.add("light");
       } else {
-        switchMessage.innerHTML = `<img class="light" src="https://derechadiario.com.ar/wp-content/plugins/wp-dark-mode/assets/images/btn-1/light.png" alt="Light">`; // Cambiar a la imagen de modo claro
-        switchButton.style.backgroundColor = "grey"; // Cambiar el color de fondo a gris
-        document.body.classList.toggle('dark');
+        // Modo oscuro
+        switchButton.innerHTML = "LIGHT MODE";
+        body.classList.remove("light");
+        body.classList.add("dark");
       }
-      isLightMode = !isLightMode; // Alternar el estado
     });
   }
-
   // Genera una flechita para subir al inicio de la página
   function generateUpArrow() {
-    const upArrow = document.createElement('a');
+    const upArrow = document.createElement('div');
+    upArrow.id = 'upButton'; // Asigna el id
     upArrow.innerHTML = `
-      <a id="upButton" href="#" title="volver arriba">
+      <a href="#" title="volver arriba">
         <img src="https://www.euroresidentes.com/tecnologia/trucos-diseno-web/wp-content/uploads/sites/7/2014/08/up1_azul1.png" alt="Volver arriba" />
       </a>
     `;
@@ -53,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function generateFooter() {
     const footer = document.createElement('footer');
     footer.innerHTML = `
-      <p>© All rights reserved 2023</p>
+      <p>© All rights reserved <span id="yearPlaceholder"></span></p>
       <section id="redesSociales">¡Seguime en mis redes sociales!<br>
         <a href="https://www.facebook.com/daniel.cabj88" class="fa fa-facebook" title="Facebook"></a>
         <a href="https://www.instagram.com/daniel_cabj88/" class="fa fa-instagram" title="Instagram"></a>
@@ -62,7 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="mailto:daniel.salas@bue.edu.ar" class="fa fa-envelope" title="Email"></a>
       </section>
     `;
-    document.body.appendChild(footer); // Cambia 'prepend' a 'appendChild' para ubicarlo al final del body
+    document.body.appendChild(footer);
+    // Obtén el elemento del marcador de posición del año y el año actual
+    var yearPlaceholder = document.getElementById("yearPlaceholder");
+    var currentYear = new Date().getFullYear();
+
+    // Coloca el año actual en el marcador de posición
+    yearPlaceholder.textContent = currentYear; // Cambia 'prepend' a 'appendChild' para ubicarlo al final del body
   }
   
   // Agrega la clase "active" al enlace del menú correspondiente según la ubicación actual
@@ -85,8 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Verifica si la ubicación actual es la página de inicio
-    if (currentLocation.endsWith("index.html")) {
-      // Obtén el enlace del logo por su id
+    if (currentLocation.endsWith("index.html") || currentLocation === "https://danielcabj88.github.io/daniel-repository/") {
       var logoLink = document.getElementById("logo");
       if (logoLink) {
         // Agrega la clase "active" al enlace del logo en la página de inicio

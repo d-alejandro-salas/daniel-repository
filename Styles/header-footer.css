@@ -1,0 +1,175 @@
+:root {
+  --white: #fff; /* Color de texto principal */
+  --principal-skyblue: #48C7F3; /* Celeste principal */
+  --border-skyblue: #3a9bc7;
+  --dark-border-hover-color: #2E7FAF;
+  --dark-blue: #1a4f72;
+  --dark-principal-skyblue:#0359AA;
+  --dark-hover-principal-skyblue: #02417C;
+}
+
+
+/* Estilos del header y footer */
+header, footer {
+  background-color: var(--principal-skyblue);
+  height: 15%;
+  text-align: center;
+  color: var(--white);
+  padding: 10px;
+  border-bottom: solid 5px var(--border-skyblue);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.dark header, body.dark footer {
+  background-color: var(--dark-principal-skyblue);
+  border-bottom: solid 5px var(--dark-border-hover-color);
+}
+
+header:hover, footer:hover {
+  background-color: var(--border-skyblue);
+  border-bottom: solid 5px var(--principal-skyblue);
+}
+
+body.dark header:hover, body.dark footer:hover {
+  background-color: var(--dark-hover-principal-skyblue);
+  border-bottom: solid 5px var(--dark-border-hover-color);}
+
+header nav, footer #redesSociales {
+  text-transform: uppercase;
+  align-items: center;
+}
+
+body.dark #redesSociales > a {
+  background-color: inherit;
+}
+
+#logo, header nav a, footer #redesSociales a, #aboutMeMenu a, #switch {
+  color: var(--white);
+  text-decoration: none;
+  padding: 5px;
+  border: 2px solid var(--white);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, padding 0.3s;
+}
+
+#logo:hover, header nav a:hover, footer #redesSociales a:hover, #aboutMeMenu a:hover {
+  background-color: var(--white);
+  color: var(--principal-skyblue);
+  border: 2px solid var(--principal-skyblue);
+  padding: 10px;
+}
+
+body.dark header nav a:hover, body.dark footer #redesSociales a:hover {
+  color: var(--dark-border-hover-color);
+  border: 2px solid var(--dark-border-hover-color);
+}
+
+header nav a, footer #redesSociales a, #aboutMeMenu a {
+  margin: 5px 10px;
+}
+
+#logo {
+  float: left;
+  padding: 10px;
+  background-color: #333;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.active {
+  /* Estilos que deseas aplicar cuando el enlace está activo (clicado) */
+  background-color: var(--border-skyblue); /* Cambia el color de fondo */
+  color: gold !important;
+  border: 2px solid gold !important; /* Cambia el borde */
+  border-radius: 5px; /* Añade bordes redondeados para resaltar */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra suave */
+  font-weight: bold;
+}
+
+/* Estilo para el botón de modo obscuro */
+
+#switch {
+  width: 185.797px;
+  background-color: #000;
+  color: #fff;
+}
+
+body.dark #switch {
+  color: #000;
+  background-color: #fff;
+  border: solid 2px #000!important;
+}
+
+/* Estilos específicos para el footer */
+footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background-color: var(--principal-skyblue);
+  padding: 10px;
+  border-top: solid 5px var(--border-skyblue);
+  border-bottom: none !important;
+}
+
+footer:hover {
+  border-top: solid 5px var(--principal-skyblue);
+}
+
+footer p {
+  margin: 0;
+}
+
+#redesSociales a {
+  width: 40px;
+  height: 40px;
+  background-color: var(--principal-skyblue);
+  color: var(--white);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+#upBotton {
+  display: scroll;
+  position: fixed;
+  bottom: 130px;
+  right: 15px;
+}
+
+@media (max-width: 768px) {
+  header, footer { /* Cambia el color de fondo del header y footer */
+    display: flex; /* Cambia el valor de display */
+    position: static;
+    height: auto; /* Cambia la altura a automático */
+    flex-direction: column!important; /* Cambia la dirección de flex a columna */
+  }
+
+  nav { /* Cambia el selector */
+    display: flex; /* Cambia el valor de display */
+    flex-direction: column!important; /* Cambia la dirección de flex a columna */
+  }  
+
+  #logo {
+    margin-bottom: 10px; /* Añade margen inferior al logo */
+  }
+}
+
