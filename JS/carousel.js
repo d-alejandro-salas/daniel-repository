@@ -25,3 +25,24 @@ nextBtn.addEventListener('click', () => {
 });
 
 showSlides();
+
+function shuffleImages() {
+  var gallery = document.getElementById("gallery");
+  var images = gallery.getElementsByClassName("galleryImage");
+  var imageArray = Array.from(images);
+
+  for (var i = imageArray.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = imageArray[i];
+    imageArray[i] = imageArray[j];
+    imageArray[j] = temp;
+  }
+
+  for (var i = 0; i < imageArray.length; i++) {
+    gallery.appendChild(imageArray[i]);
+  }
+}
+
+    document.addEventListener('DOMContentLoaded', function() {
+      shuffleImages();
+    });
