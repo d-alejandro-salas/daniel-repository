@@ -34,10 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       document.body.classList.toggle("dark");
 
-      // Verificar si el elemento #aboutMeMenu está presente en el body
-      const aboutMeMenu = document.querySelector("#aboutMeMenu");
-      if (aboutMeMenu) {
+     const aboutMeMenu = document.getElementById("aboutMeMenu");
+     const carousel = document.getElementById("carousel");
+      if (aboutMeMenu && !carousel) {
+        // Si solo aboutMeMenu está presente
         aboutMeMenu.classList.toggle("dark");
+      } else if (carousel && !aboutMeMenu) {
+        // Si solo carousel está presente
+        carousel.classList.toggle("dark");
       }
 
       if (isLightMode) {

@@ -103,10 +103,59 @@ body.dark #flex-container .form__button {
   transform: scale(1.1); /* Ajusta la escala en hover según sea necesario */
 }
 
+#carousel {
+  width: 25%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto; /* Centra horizontalmente */
+  border: 2px solid #333; /* Añade un borde de color gris oscuro */
+  border-radius: 10px; /* Agrega esquinas redondeadas */
+  background-color: #48C7F3;
+  border: 0.5rem solid #3a9bc7;
+}
+#carousel.dark {
+  background-color: #0359AA;
+  border-color: #2E7FAF;
+}
+#carousel h2 {
+  text-align: center;
+}
+#carousel .carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+#carousel .carousel-inner img {
+  width: 100%;
+  height: auto;
+}
+#carousel .prev, #carousel .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+#carousel .prev {
+  left: 0;
+}
+#carousel .next {
+  right: 0;
+}
+
 /* Additional styles for larger screens */
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   #gallery {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  #carousel {
+    width: 75%;
+  }
+  #carousel .carousel-inner img {
+    width: 33.3%;
   }
 }
 #aboutMeMenu {
