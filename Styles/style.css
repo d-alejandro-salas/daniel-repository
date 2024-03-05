@@ -86,6 +86,45 @@ body.dark #flex-container .form__button {
   border: 2px solid #3a9bc7;
 }
 
+.marquee .carousel-horse {
+  display: inline-block;
+  animation: carouselMotion 1.5s infinite alternate; /* Define la animación */
+}
+
+.carousel {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+/* --- --- CAROUSEL --- --- */
+.carousel__contenedor {
+  position: relative;
+}
+.carousel__contenedor .prev, .carousel__contenedor .next {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  top: calc(50% - 35px);
+  cursor: pointer;
+  line-height: 30px;
+  text-align: center;
+  background: #48C7F3;
+  color: #fff;
+  opacity: 20%;
+}
+.carousel__contenedor:hover, .carousel__contenedor:hover {
+  opacity: 100%;
+}
+.carousel__contenedor .prev {
+  left: -30px;
+}
+.carousel__contenedor .next {
+  right: -30px;
+}
+
 /* Gallery styles for mobile */
 #gallery {
   display: grid;
@@ -103,60 +142,10 @@ body.dark #flex-container .form__button {
   transform: scale(1.1); /* Ajusta la escala en hover según sea necesario */
 }
 
-#carousel {
-  width: 90%;
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto; /* Centra horizontalmente */
-  border: 2px solid #333; /* Añade un borde de color gris oscuro */
-  border-radius: 10px; /* Agrega esquinas redondeadas */
-  background-color: #48C7F3;
-  border: 0.5rem solid #3a9bc7;
-}
-#carousel.dark {
-  background-color: #0359AA;
-  border-color: #2E7FAF;
-}
-#carousel .marquee .carousel-horse {
-  display: inline-block;
-  animation: carouselMotion 1.5s infinite alternate; /* Define la animación */
-}
-#carousel .carousel-inner {
-  display: flex;
-  transition: transform 0.75s ease;
-}
-#carousel .carousel-inner img {
-  width: 100%;
-  height: auto;
-}
-#carousel .prev, #carousel .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1;
-}
-#carousel .prev {
-  left: 0;
-}
-#carousel .next {
-  right: 0;
-}
-
 /* Additional styles for larger screens */
 @media (min-width: 600px) {
   #gallery {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  #carousel {
-    width: 75%;
-  }
-  #carousel .carousel-inner img {
-    width: 33.3%;
   }
 }
 @keyframes carouselMotion {

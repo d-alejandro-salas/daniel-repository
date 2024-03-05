@@ -1,30 +1,35 @@
 "Use strict"
 
-const carousel = document.getElementById("carousel");
-const carouselInner = document.querySelector('.carousel-inner');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-
-let slideIndex = 0;
-
-function showSlides() {
-  const slides = carouselInner.children;
-  if (slideIndex >= slides.length) slideIndex = 0;
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-  carouselInner.style.transform = `translateX(-${slideIndex * 100}%)`;
-}
-
-prevBtn.addEventListener('click', () => {
-  slideIndex--;
-  showSlides();
+window.addEventListener('load', function(){
+  new Glider(document.querySelector('.carousel__lista'), {
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    draggable: true,
+    dots: '.carousel__indicadores',
+    arrows: {
+      prev: '.prev',
+      next: '.next'
+    },
+    responsive: [
+      {
+        // screens greater than >= 775px
+        breakpoint: 450,
+        settings: {
+        // Set to `auto` and provide item width to adjust to viewport
+        slidesToShow: 2,
+        slidesToScroll: 2
+        }
+      },{
+        // screens greater than >= 1024px
+        breakpoint: 800,
+        settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4
+        }
+      }
+    ]
+  });
 });
-
-nextBtn.addEventListener('click', () => {
-  slideIndex++;
-  showSlides();
-});
-
-showSlides();
 
 function shuffleImages() {
   var gallery = document.getElementById("gallery");
