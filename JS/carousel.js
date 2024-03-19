@@ -2,8 +2,8 @@
 
 window.addEventListener('load', function(){
   new Glider(document.querySelector('.carousel__lista'), {
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     draggable: true,
     dots: '.carousel__indicadores',
     arrows: {
